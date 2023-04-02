@@ -2,30 +2,30 @@
 
 exports[`RTLPanel renders 1`] = `
 <div
-  class="sc-jSMfEi hfxUgk"
+  class="sc-jTrPJq fVThFB"
 >
   <span
-    class="sc-bczRLJ kxUEBA"
+    class="sc-beqWaB JxkRB"
   >
     <label
-      class="sc-gsnTZi ecyAuL"
+      class="sc-gueYoa MnWhy"
     >
       <input
         aria-controls="rtl-status"
         checked=""
-        class="sc-dkzDqf khKIDk"
+        class="sc-dmqHEX cKQmMr"
         data-testid="rtl-toggle-input"
         type="checkbox"
       />
       <a
-        class="sc-hKMtZM kLroqp"
+        class="sc-hLseeU cgSywu"
       >
         Enable right-to-left
       </a>
     </label>
     <span
       aria-live="polite"
-      class="sc-eCYdqJ gVppkG"
+      class="sc-eDDNvR fnwEbN"
       id="rtl-status"
       role="region"
     >
