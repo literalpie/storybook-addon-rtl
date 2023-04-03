@@ -1,4 +1,4 @@
-# Storybook Addon RTL [![Version](https://img.shields.io/npm/v/storybook-addon-rtl.svg)](https://www.npmjs.com/package/storybook-addon-rtl) [![Build Status](https://img.shields.io/travis/unindented/storybook-addon-rtl.svg)](https://travis-ci.org/unindented/storybook-addon-rtl)
+# Storybook Addon RTL [![Version](https://img.shields.io/npm/v/storybook-addon-rtl.svg)](https://www.npmjs.com/package/storybook-addon-rtl)
 
 Storybook Addon RTL allows you to switch to right-to-left flow in your stories in [Storybook](https://storybook.js.org).
 
@@ -6,6 +6,7 @@ This addon has been tested with Storybook for React, Vue and Angular. It should 
 
 ![Storybook Addon RTL Demo](docs/demo.png)
 
+> This is a permanent fork of [unindented/storybook-addon-rtl](https://github.com/unindented/storybook-addon-rtl), which is now archived. Thanks for `unindented` for the original code!
 
 ### Getting Started
 
@@ -28,7 +29,7 @@ module.exports = {
 Add the following to `preview.js`:
 
 ```js
-import { initializeRTL } from 'storybook-addon-rtl';
+import { initializeRTL } from "storybook-addon-rtl";
 
 initializeRTL();
 ```
@@ -52,19 +53,15 @@ rtlParameter.parameters = {
 }
 ```
 
-
 ## Meta
 
-* Code: `git clone https://github.com/unindented/storybook-addon-rtl.git`
-* Home: <https://github.com/unindented/storybook-addon-rtl/>
-
+- Code: `git clone https://github.com/literalpie/storybook-addon-rtl.git`
+- Home: <https://github.com/literalpie/storybook-addon-rtl/>
 
 ## Contributors
 
-* Daniel Perez Alvarez ([unindented@gmail.com](mailto:unindented@gmail.com))
-* Benjamin Kindle ([benjaminkindle@yahoo.com](mailto:benjaminkindle@yahoo.com))
-
+- Benjamin Kindle ([benjaminkindle@yahoo.com](mailto:benjaminkindle@yahoo.com))
 
 ## License
 
-Copyright (c) 2017 Daniel Perez Alvarez ([unindented.org](https://unindented.org/)). This is free software, and may be redistributed under the terms specified in the LICENSE file.
+Copyright (c) 2023 Benjamin Kindle (@literalpie). This is free software, and may be redistributed under the terms specified in the LICENSE file.

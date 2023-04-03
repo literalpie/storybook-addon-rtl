@@ -11,6 +11,6 @@ module.exports = {
   },
   framework: '@storybook/react-webpack5',
   core: {
-    builder: "@storybook/builder-webpack5"
+    builder: '@storybook/builder-webpack5'
   }
 }

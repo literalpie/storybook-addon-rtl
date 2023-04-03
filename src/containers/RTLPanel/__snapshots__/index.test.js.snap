@@ -2,30 +2,30 @@
 
 exports[`RTLPanel with direction set while panel closed renders 1`] = `
 <div
-  class="sc-jSMfEi hfxUgk"
+  class="sc-jTrPJq fVThFB"
 >
   <span
-    class="sc-bczRLJ kxUEBA"
+    class="sc-beqWaB JxkRB"
   >
     <label
-      class="sc-gsnTZi ecyAuL"
+      class="sc-gueYoa MnWhy"
     >
       <input
         aria-controls="rtl-status"
         checked=""
-        class="sc-dkzDqf khKIDk"
+        class="sc-dmqHEX cKQmMr"
         data-testid="rtl-toggle-input"
         type="checkbox"
       />
       <a
-        class="sc-hKMtZM kLroqp"
+        class="sc-hLseeU cgSywu"
       >
         Enable right-to-left
       </a>
     </label>
     <span
       aria-live="polite"
-      class="sc-eCYdqJ gVppkG"
+      class="sc-eDDNvR fnwEbN"
       id="rtl-status"
       role="region"
     >
@@ -37,30 +37,30 @@ exports[`RTLPanel with direction set while panel closed renders 1`] = `
 
 exports[`RTLPanel with query parameter renders 1`] = `
 <div
-  class="sc-jSMfEi hfxUgk"
+  class="sc-jTrPJq fVThFB"
 >
   <span
-    class="sc-bczRLJ kxUEBA"
+    class="sc-beqWaB JxkRB"
   >
     <label
-      class="sc-gsnTZi ecyAuL"
+      class="sc-gueYoa MnWhy"
     >
       <input
         aria-controls="rtl-status"
         checked=""
-        class="sc-dkzDqf khKIDk"
+        class="sc-dmqHEX cKQmMr"
         data-testid="rtl-toggle-input"
         type="checkbox"
       />
       <a
-        class="sc-hKMtZM kLroqp"
+        class="sc-hLseeU cgSywu"
       >
         Enable right-to-left
       </a>
     </label>
     <span
       aria-live="polite"
-      class="sc-eCYdqJ gVppkG"
+      class="sc-eDDNvR fnwEbN"
       id="rtl-status"
       role="region"
     >
@@ -72,30 +72,30 @@ exports[`RTLPanel with query parameter renders 1`] = `
 
 exports[`RTLPanel with story param renders 1`] = `
 <div
-  class="sc-jSMfEi hfxUgk"
+  class="sc-jTrPJq fVThFB"
 >
   <span
-    class="sc-bczRLJ kxUEBA"
+    class="sc-beqWaB JxkRB"
   >
     <label
-      class="sc-gsnTZi ecyAuL"
+      class="sc-gueYoa MnWhy"
     >
       <input
         aria-controls="rtl-status"
         checked=""
-        class="sc-dkzDqf khKIDk"
+        class="sc-dmqHEX cKQmMr"
         data-testid="rtl-toggle-input"
         type="checkbox"
       />
       <a
-        class="sc-hKMtZM kLroqp"
+        class="sc-hLseeU cgSywu"
       >
         Enable right-to-left
       </a>
     </label>
     <span
       aria-live="polite"
-      class="sc-eCYdqJ gVppkG"
+      class="sc-eDDNvR fnwEbN"
       id="rtl-status"
       role="region"
     >
@@ -107,30 +107,30 @@ exports[`RTLPanel with story param renders 1`] = `
 
 exports[`RTLPanel with story param responds to changes 1`] = `
 <div
-  class="sc-jSMfEi hfxUgk"
+  class="sc-jTrPJq fVThFB"
 >
   <span
-    class="sc-bczRLJ kxUEBA"
+    class="sc-beqWaB JxkRB"
   >
     <label
-      class="sc-gsnTZi ecyAuL"
+      class="sc-gueYoa MnWhy"
     >
       <input
         aria-controls="rtl-status"
         checked=""
-        class="sc-dkzDqf khKIDk"
+        class="sc-dmqHEX cKQmMr"
         data-testid="rtl-toggle-input"
         type="checkbox"
       />
       <a
-        class="sc-hKMtZM kLroqp"
+        class="sc-hLseeU cgSywu"
       >
         Enable right-to-left
       </a>
     </label>
     <span
       aria-live="polite"
-      class="sc-eCYdqJ gVppkG"
+      class="sc-eDDNvR fnwEbN"
       id="rtl-status"
       role="region"
     >
@@ -142,30 +142,30 @@ exports[`RTLPanel with story param responds to changes 1`] = `
 
 exports[`RTLPanel with story param responds to changes 2`] = `
 <div
-  class="sc-jSMfEi hfxUgk"
+  class="sc-jTrPJq fVThFB"
 >
   <span
-    class="sc-bczRLJ kxUEBA"
+    class="sc-beqWaB JxkRB"
   >
     <label
-      class="sc-gsnTZi isuMOS"
+      class="sc-gueYoa NAoBb"
     >
       <input
         aria-controls="rtl-status"
         checked=""
-        class="sc-dkzDqf khKIDk"
+        class="sc-dmqHEX cKQmMr"
         data-testid="rtl-toggle-input"
         type="checkbox"
       />
       <a
-        class="sc-hKMtZM jsWbyR"
+        class="sc-hLseeU bkAwTu"
       >
         Enable right-to-left
       </a>
     </label>
     <span
       aria-live="polite"
-      class="sc-eCYdqJ gVppkG"
+      class="sc-eDDNvR fnwEbN"
       id="rtl-status"
       role="region"
     >
@@ -177,29 +177,29 @@ exports[`RTLPanel with story param responds to changes 2`] = `
 
 exports[`RTLPanel without query parameter renders 1`] = `
 <div
-  class="sc-jSMfEi hfxUgk"
+  class="sc-jTrPJq fVThFB"
 >
   <span
-    class="sc-bczRLJ kxUEBA"
+    class="sc-beqWaB JxkRB"
   >
     <label
-      class="sc-gsnTZi isuMOS"
+      class="sc-gueYoa NAoBb"
     >
       <input
         aria-controls="rtl-status"
-        class="sc-dkzDqf khKIDk"
+        class="sc-dmqHEX cKQmMr"
         data-testid="rtl-toggle-input"
         type="checkbox"
       />
       <a
-        class="sc-hKMtZM jsWbyR"
+        class="sc-hLseeU bkAwTu"
       >
         Enable right-to-left
       </a>
     </label>
     <span
       aria-live="polite"
-      class="sc-eCYdqJ gVppkG"
+      class="sc-eDDNvR fnwEbN"
       id="rtl-status"
       role="region"
     >
