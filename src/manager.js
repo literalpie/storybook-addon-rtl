@@ -10,7 +10,7 @@ export function register () {
     const channel = addons.getChannel()
     setDirectionOnStoryChange(api)
 
-    addons.addPanel(PANEL_ID, {
+    addons.add(PANEL_ID, {
       title: 'RTL',
       render: ({ active, key }) => { /* eslint-disable-line react/prop-types, react/display-name */
         if (!active) {
