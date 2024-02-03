@@ -6,7 +6,13 @@
   "env": {
     "jest": true
   },
-  "settings": {
+  // Rules that conflict with prettier and will be removed from eslint eventually
+  // (prettier isn't enabled in this project, but I have it locally)
+  "rules": {
+    "space-before-function-paren": "off",
+    "comma-dangle": "off"
+  },
+    "settings": {
     "react": {
       "version": "detect"
     }

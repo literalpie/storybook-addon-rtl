@@ -4,6 +4,7 @@ module.exports = {
   ],
   addons: [
     '@storybook/addon-actions',
+    '@storybook/addon-webpack5-compiler-babel',
     '../register'
   ],
   features: {

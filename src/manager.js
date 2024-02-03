@@ -1,16 +1,17 @@
 import React from 'react'
-import { addons } from '@storybook/addons'
+import { addons, types } from '@storybook/manager-api'
 import { STORY_RENDERED } from '@storybook/core-events'
 import RTLPanel from './containers/RTLPanel'
 import { ADDON_ID, PANEL_ID, UPDATE_EVENT_ID } from './constants'
 import { getDefaultTextDirection } from './utils'
 
-export function register () {
+export function register() {
   addons.register(ADDON_ID, (api) => {
     const channel = addons.getChannel()
     setDirectionOnStoryChange(api)
 
     addons.add(PANEL_ID, {
+      type: types.PANEL,
       title: 'RTL',
       render: ({ active, key }) => { /* eslint-disable-line react/prop-types, react/display-name */
         if (!active) {
@@ -23,7 +24,7 @@ export function register () {
   })
 }
 
-export function setDirectionOnStoryChange (api) {
+export function setDirectionOnStoryChange(api) {
   const channel = addons.getChannel()
 
   // Keep track of the most recent value that was a result of user interaction
