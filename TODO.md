@@ -1,0 +1,5 @@
+- export no-op of deprecated initializeRTL and register
+- Update documentation
+- make Tool and panel optional, but default to panel
+- update to SB8 (or at least test it)
+- add eslint and prettier

@@ -1,9 +1,0 @@
-{
-  "rootDir": "../../",
-  "testEnvironment": "jsdom",
-  "coverageReporters": [
-    "text",
-    "text-summary",
-    "html"
-  ]
-}
