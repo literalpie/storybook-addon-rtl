@@ -4,7 +4,7 @@ Storybook Addon RTL allows you to switch to right-to-left flow in your stories i
 
 This addon has been tested with Storybook for React, Vue and Angular. It should also work in other frameworks.
 
-![Storybook Addon RTL Demo](docs/demo.png)
+![Storybook Addon RTL Demo](docs/demo.gif)
 
 > This is a permanent fork of [unindented/storybook-addon-rtl](https://github.com/unindented/storybook-addon-rtl), which is now archived. Thanks for `unindented` for the original code!
 
@@ -26,14 +26,6 @@ module.exports = {
 };
 ```
 
-Add the following to `preview.js`:
-
-```js
-import { initializeRTL } from "storybook-addon-rtl";
-
-initializeRTL();
-```
-
 Then write your stories normally:
 
 ```js
@@ -43,15 +35,25 @@ import MyComponent from './MyComponent'
 export default {
   title: 'My Component',
   component: MyComponent
-}
-const Template = (args) => <MyComponent {...args}/>
-export const default = Template.bind({})
+};
 
-// Optionally include direction as story parameter
-rtlParameter.parameters = {
-  direction: 'rtl'
+export const default = {};
+
+export const rtlParameter = {
+  // Optionally include direction as story parameter
+  parameters: {
+    direction: 'rtl'
+  }
 }
 ```
+
+### Query Params
+
+You can also set the direction using query params in the URL. This is useful for things like e2e tests.
+
+Just add `&direction=rtl` or `&direction=ltr` to the end of the URL:
+
+`storybook.example.com/?path=/story/button--standard&direction=rtl`
 
 ## Meta
 
