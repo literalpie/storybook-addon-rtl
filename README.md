@@ -4,7 +4,7 @@ Storybook Addon RTL allows you to switch to right-to-left flow in your stories i
 
 This addon has been tested with Storybook for React, Vue and Angular. It should also work in other frameworks.
 
-![Storybook Addon RTL Demo](docs/demo.mp4)
+![Storybook Addon RTL Demo](docs/demo.gif)
 
 > This is a permanent fork of [unindented/storybook-addon-rtl](https://github.com/unindented/storybook-addon-rtl), which is now archived. Thanks for `unindented` for the original code!
 
