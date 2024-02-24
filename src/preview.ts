@@ -13,8 +13,6 @@ import type {
   ProjectAnnotations,
   PartialStoryFn,
 } from "@storybook/types";
-import { PARAM_KEY } from "./constants";
-import { addons, useStoryContext } from "@storybook/preview-api";
 import { setTextDirection } from "./utils";
 import { INITIALIZE_EVENT_ID, UPDATE_EVENT_ID } from "./constants";
 import { useChannel, useEffect } from "@storybook/preview-api";
@@ -35,9 +33,6 @@ const withRtl = (StoryFn: PartialStoryFn<Renderer>) => {
 
 const preview: ProjectAnnotations<Renderer> = {
   decorators: [withRtl],
-  globals: {
-    [PARAM_KEY]: false,
-  },
 };
 
 export default preview;

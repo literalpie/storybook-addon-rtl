@@ -1,3 +1,4 @@
+import { API } from "@storybook/manager-api";
 import { getDefaultTextDirection, setTextDirection } from "./utils";
 import { describe, test, expect, vi } from "vitest";
 describe("utils", () => {
@@ -9,7 +10,7 @@ describe("utils", () => {
       vi.spyOn<any, any>(window, "getComputedStyle").mockReturnValue({
         direction: "",
       });
-      expect(getDefaultTextDirection(api)).toBe("rtl");
+      expect(getDefaultTextDirection(api as unknown as API)).toBe("rtl");
     });
 
     test("returns the text direction from the html tag", () => {
@@ -19,7 +20,7 @@ describe("utils", () => {
       vi.spyOn<any, any>(window, "getComputedStyle").mockReturnValue({
         direction: "rtl",
       });
-      expect(getDefaultTextDirection(api)).toBe("rtl");
+      expect(getDefaultTextDirection(api as unknown as API)).toBe("rtl");
     });
 
     test("returns `ltr` as a fallback", () => {
@@ -29,7 +30,7 @@ describe("utils", () => {
       vi.spyOn<any, any>(window, "getComputedStyle").mockReturnValue({
         direction: "",
       });
-      expect(getDefaultTextDirection(api)).toBe("ltr");
+      expect(getDefaultTextDirection(api as unknown as API)).toBe("ltr");
     });
   });
 

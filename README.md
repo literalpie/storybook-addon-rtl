@@ -26,14 +26,6 @@ module.exports = {
 };
 ```
 
-Add the following to `preview.js`:
-
-```js
-import { initializeRTL } from "storybook-addon-rtl";
-
-initializeRTL();
-```
-
 Then write your stories normally:
 
 ```js
@@ -43,15 +35,25 @@ import MyComponent from './MyComponent'
 export default {
   title: 'My Component',
   component: MyComponent
-}
-const Template = (args) => <MyComponent {...args}/>
-export const default = Template.bind({})
+};
 
-// Optionally include direction as story parameter
-rtlParameter.parameters = {
-  direction: 'rtl'
+export const default = {};
+
+export const rtlParameter = {
+  // Optionally include direction as story parameter
+  parameters: {
+    direction: 'rtl'
+  }
 }
 ```
+
+### Query Params
+
+You can also set the direction using query params in the URL. This is useful for things like e2e tests.
+
+Just add `&direction=rtl` or `&direction=ltr` to the end of the URL:
+
+`storybook.example.com/?path=/story/button--standard&direction=rtl`
 
 ## Meta
 

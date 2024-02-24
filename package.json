@@ -49,14 +49,15 @@
     "prerelease": "zx scripts/prepublish-checks.mjs",
     "release": "npm run build && auto shipit",
     "eject-ts": "zx scripts/eject-typescript.mjs",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "storybook": "storybook dev -p 6006 --no-open",
+    "build-storybook": "storybook build",
+    "format": "prettier . --check",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@storybook/addon-essentials": "7.6.12",
     "@storybook/addon-interactions": "7.6.12",
     "@storybook/addon-links": "7.6.12",
-    "@storybook/blocks": "7.6.12",
     "@storybook/components": "7.6.12",
     "@storybook/core-events": "7.6.12",
     "@storybook/manager": "^7.6.0",
@@ -68,7 +69,6 @@
     "@storybook/testing-library": "^0.2.2",
     "@storybook/theming": "7.6.12",
     "@storybook/types": "7.6.12",
-    "@testing-library/react": "^14.2.1",
     "@types/node": "^18.15.0",
     "@types/react": "^18.2.52",
     "@types/react-dom": "^18.2.18",
@@ -84,12 +84,12 @@
     "react-dom": "^18.2.0",
     "rimraf": "^5.0.5",
     "storybook": "7.6.12",
-    "styled-components": "6.1.8",
     "tsup": "^7.2.0",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
     "vitest": "^1.2.2",
-    "zx": "^7.2.3"
+    "zx": "^7.2.3",
+    "eslint": "^8.57.0"
   },
   "publishConfig": {
     "access": "public"
@@ -119,9 +119,5 @@
       "react-native"
     ],
     "icon": "https://user-images.githubusercontent.com/321738/63501763-88dbf600-c4cc-11e9-96cd-94adadc2fd72.png"
-  },
-  "dependencies": {
-    "@emotion/babel-plugin": "^11.11.0",
-    "@emotion/react": "^11.11.3"
   }
 }

@@ -1,14 +1,26 @@
 import { useTheme } from "@storybook/theming";
-import React, { useState } from "react";
+import React from "react";
+import { RTLDirection } from "src/constants";
 
+// There are a lot of specific translate and scale values in this file that were picked based on trial/error
+// based on what looks the most balanced.
+/**
+ * An icon with two arrows pointing in different directions.
+ * Depending on the direction parameter, one of the arrows will be emphasized with color and scale.
+ */
 export const DirectionArrowsIcon = ({
   direction,
 }: {
-  direction: "ltr" | "rtl";
+  direction: RTLDirection;
 }) => {
   const theme = useTheme();
+  const ariaLabel =
+    direction === "ltr"
+      ? "Switch direction to right-to-left."
+      : "Switch Direction to left-to-right";
   return (
     <div
+      aria-label={ariaLabel}
       style={{
         width: "20px",
         height: "20px",

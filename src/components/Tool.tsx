@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { useChannel } from "@storybook/manager-api";
-import { UPDATE_EVENT_ID } from "src/constants";
-import { IconButton, Icons } from "@storybook/components";
+import { RTLDirection, UPDATE_EVENT_ID } from "src/constants";
+import { IconButton } from "@storybook/components";
 import { DirectionArrowsIcon } from "./DirectionArrowsIcon";
 
 export const Tool = () => {
-  const [dirState, setDirState] = useState<{ direction: "ltr" | "rtl" }>({
+  const [dirState, setDirState] = useState<{ direction: RTLDirection }>({
     direction: "ltr",
   });
   const channel = useChannel({
@@ -13,7 +13,6 @@ export const Tool = () => {
       setDirState({ direction: updateEvent.direction });
     },
   });
-
   return (
     <>
       <IconButton
@@ -25,8 +24,7 @@ export const Tool = () => {
           });
         }}
       >
-        {/* <DirectionArrowsIcon direction={dirState.direction} /> */}
-        {/* <Icons icon="arrowleft" /> */}
+        <DirectionArrowsIcon direction={dirState.direction} />
       </IconButton>
     </>
   );
