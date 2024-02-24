@@ -1,4 +1,5 @@
 #!/usr/bin/env zx
+/* eslint-disable */
 
 import boxen from "boxen";
 import dedent from "dedent";

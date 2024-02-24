@@ -1,3 +1,0 @@
-- Update documentation
-- update to SB8 (or at least test it)
-- add eslint and prettier

@@ -28,7 +28,7 @@ export function setDirectionOnStoryChange(api: API) {
   // Whenever a story is rendered, update the state to represent the parameter value of the story.
   // We do this here and not in the panel component because we want the parameter to be respected
   // even if the panel is never opened
-  channel.on(STORY_RENDERED, (_) => {
+  channel.on(STORY_RENDERED, () => {
     const lastUpdate = channel.last(UPDATE_EVENT_ID)?.[0];
     lastUserInteractionValue = lastUpdate?.userInteraction
       ? lastUpdate.direction

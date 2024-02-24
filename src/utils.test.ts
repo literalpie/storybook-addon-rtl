@@ -1,6 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { API } from "@storybook/manager-api";
 import { getDefaultTextDirection, setTextDirection } from "./utils";
 import { describe, test, expect, vi } from "vitest";
+
 describe("utils", () => {
   describe(".getDefaultTextDirection", () => {
     test("returns the text direction from the query params", () => {

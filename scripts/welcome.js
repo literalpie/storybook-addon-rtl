@@ -1,5 +1,4 @@
-/* eslint-disable eslint-comments/disable-enable-pair */
-/* eslint-disable no-console */
+/* eslint-disable */
 const prompts = require("prompts");
 const dedent = require("ts-dedent").default;
 const path = require("path");

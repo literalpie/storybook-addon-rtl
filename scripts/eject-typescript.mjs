@@ -1,4 +1,5 @@
 #!/usr/bin/env zx
+/* eslint-disable */
 
 // Copy TS files and delete src
 await $`cp -r ./src ./srcTS`;
