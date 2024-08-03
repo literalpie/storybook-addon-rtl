@@ -8,7 +8,7 @@ This addon has been tested with Storybook for React, Vue and Angular. It should 
 
 > This is a permanent fork of [unindented/storybook-addon-rtl](https://github.com/unindented/storybook-addon-rtl), which is now archived. Thanks for `unindented` for the original code!
 
-### Getting Started
+## Getting Started
 
 ```sh
 npm i --save-dev storybook-addon-rtl
@@ -47,13 +47,19 @@ export const rtlParameter = {
 }
 ```
 
+## Advanced
+
 ### Query Params
 
-You can also set the direction using query params in the URL. This is useful for things like e2e tests.
+You can set the direction using query params in the URL. This is useful for things like e2e tests.
 
 Just add `&direction=rtl` or `&direction=ltr` to the end of the URL:
 
 `storybook.example.com/?path=/story/button--standard&direction=rtl`
+
+### Channel API
+
+This addon uses the [Storybook Channel API](https://storybook.js.org/docs/addons/addons-api#usechannel) to emit and respond to direction change events. This allows anyone to write custom code that can set or react to changes in the direction. This is especially useful when working with some libraries that need to know about the current direction. See [./src/stories/CustomDecorator.stories.tsx](./src/stories/CustomDecorator.stories.tsx) for an example.
 
 ## Meta
 
