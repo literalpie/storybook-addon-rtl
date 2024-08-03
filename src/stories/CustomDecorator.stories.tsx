@@ -14,11 +14,14 @@ const SimpleText = () => {
 const withDirectionToggle: Decorator = (Story) => {
   const [direction, setDirection] = useState<"ltr" | "rtl">("ltr");
   const channel = useChannel({
+    // This is the even that is emitted when the direction changes.
+    // Use this function to react to direction changes.
     [RTL_UPDATE_EVENT]: (directionUpdateEvent: RTLChangeEvent) => {
       setDirection(directionUpdateEvent.direction);
     },
   });
   const toggleDirection = () =>
+    // If you want to change the direction set by the addon, you can emit the event yourself.
     channel(RTL_UPDATE_EVENT, {
       direction: direction === "ltr" ? "rtl" : "ltr",
     } as RTLChangeEvent);
