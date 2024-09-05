@@ -18,6 +18,8 @@ jobs:
 
       - name: Prepare repository
         run: git fetch --unshallow --tags
+      - uses: pnpm/action-setup@v4
+
 
       - name: Use Node.js 20.x
         uses: actions/setup-node@v3
@@ -26,7 +28,6 @@ jobs:
           cache: 'pnpm'
 
 
-      - uses: pnpm/action-setup@v4
 
       - name: Install dependencies
         run: pnpm install --ignore-scripts
