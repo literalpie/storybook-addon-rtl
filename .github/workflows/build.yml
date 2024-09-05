@@ -10,7 +10,7 @@ jobs:
   build:
     environment:
       name: github-pages
-      url: ${{ steps.build-publish.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url }}
 
     runs-on: ubuntu-latest
     steps:
@@ -20,14 +20,11 @@ jobs:
         run: git fetch --unshallow --tags
       - uses: pnpm/action-setup@v4
 
-
       - name: Use Node.js 20.x
         uses: actions/setup-node@v3
         with:
           node-version: 20.x
           cache: 'pnpm'
-
-
 
       - name: Install dependencies
         run: pnpm install --ignore-scripts
