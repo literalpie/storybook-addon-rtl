@@ -8,6 +8,10 @@ permissions:
 
 jobs:
   build:
+    environment:
+      name: github-pages
+      url: ${{ steps.build-publish.outputs.page_url }}
+
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
