@@ -1,0 +1,48 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - master
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    environment:
+      name: storybook
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Prepare repository
+        run: git fetch --unshallow --tags
+      - uses: pnpm/action-setup@v4
+
+      - name: Use Node.js 20.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.x
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --ignore-scripts
+
+      - name: Build Storybook
+        run: |
+          pnpm run build && pnpm run build-storybook
+
+      - name: upload
+        uses: actions/upload-pages-artifact@v2
+        with: 
+          path: storybook-static
+
+      - id: deploy
+        name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v3
+        with:
+          token: ${{ github.token }}
