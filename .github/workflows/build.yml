@@ -9,8 +9,10 @@ permissions:
 jobs:
   build:
     environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      - name: github-pages
+        url: ${{ steps.deploy.outputs.page_url }}
+      - name: Other Site
+        url: https://www.literalpie.com
 
     runs-on: ubuntu-latest
     steps:
