@@ -7,7 +7,7 @@ permissions:
   id-token: write
 
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -27,7 +27,7 @@ jobs:
 
       - name: Build Storybook
         run: |
-          pnpm run build-storybook
+          pnpm run build && pnpm run build-storybook
 
       - name: 'upload'
         uses: actions/upload-pages-artifact@v2
