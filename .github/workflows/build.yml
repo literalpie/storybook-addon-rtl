@@ -1,9 +1,6 @@
-name: Deploy
+name: Test
 
-on:
-  push:
-    branches:
-      - master
+on: [push]
 permissions:
   contents: read
   pages: write
@@ -19,9 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Prepare repository
-        run: git fetch --unshallow --tags
-      - uses: pnpm/action-setup@v4
+      - name: Setup Node
+        uses: actions/setup-node@v3
+
+      - name: Install pnpm
+        shell: bash
+        run: |
+          npm install -g pnpm@9.11.0
 
       - name: Use Node.js 20.x
         uses: actions/setup-node@v3
@@ -30,19 +31,6 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install --ignore-scripts
-
-      - name: Build Storybook
         run: |
-          pnpm run build && pnpm run build-storybook
-
-      - name: upload
-        uses: actions/upload-pages-artifact@v2
-        with: 
-          path: storybook-static
-
-      - id: deploy
-        name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v3
-        with:
-          token: ${{ github.token }}
+          pnpm install --ignore-scripts
+          pnpm store prune
