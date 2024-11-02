@@ -12,14 +12,33 @@ import type {
   Renderer,
   ProjectAnnotations,
   PartialStoryFn,
+  DecoratorFunction,
 } from "@storybook/types";
 import { setTextDirection } from "./utils";
 import { INITIALIZE_EVENT_ID, UPDATE_EVENT_ID } from "./constants";
-import { useChannel, useEffect } from "@storybook/preview-api";
+import {
+  useChannel,
+  useEffect,
+  useGlobals,
+  useParameter,
+  useState,
+} from "@storybook/preview-api";
 
-const withRtl = (StoryFn: PartialStoryFn<Renderer>) => {
+const withRtl: DecoratorFunction = (StoryFn, context) => {
+  const [globals, setGlobals] = useGlobals();
+  const directionParameter = useParameter("direction", "ltr");
+  const [eventDirection, setEventDirection] = useState<
+    "ltr" | "rtl" | undefined
+  >(undefined);
+  // setGlobals()
+  const direction = globals["storybook-addon-rtl"];
+  // setGlobals({ "storybook-addon-rtl": direction });
+  console.log("withRTL direction", globals, directionParameter);
   const channel = useChannel({
     [UPDATE_EVENT_ID]: ({ direction }) => {
+      setEventDirection(direction);
+      // setting the direction on canvasElement is a good way to do it
+      (context.canvasElement as HTMLElement).dir = direction;
       setTextDirection(direction);
     },
   });

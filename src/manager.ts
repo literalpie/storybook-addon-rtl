@@ -14,7 +14,9 @@ addons.register(ADDON_ID, (api) => {
     title: "RTL",
     disabled: true,
     match: ({ viewMode }) => {
-      return viewMode === "story";
+      // return viewMode === "story";
+      // console.log("hi!", viewMode);
+      return true;
     },
     render: Tool,
   });
@@ -28,7 +30,8 @@ export function setDirectionOnStoryChange(api: API) {
   // Whenever a story is rendered, update the state to represent the parameter value of the story.
   // We do this here and not in the panel component because we want the parameter to be respected
   // even if the panel is never opened
-  channel.on(STORY_RENDERED, () => {
+  channel.on(STORY_RENDERED, (e) => {
+    console.log("story rendered", e, api.getStoryGlobals());
     const lastUpdate = channel.last(UPDATE_EVENT_ID)?.[0];
     lastUserInteractionValue = lastUpdate?.userInteraction
       ? lastUpdate.direction
