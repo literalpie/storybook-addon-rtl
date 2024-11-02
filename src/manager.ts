@@ -13,9 +13,6 @@ addons.register(ADDON_ID, (api) => {
     type: types.TOOL,
     title: "RTL",
     disabled: true,
-    match: ({ viewMode }) => {
-      return viewMode === "story";
-    },
     render: Tool,
   });
 });
