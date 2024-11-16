@@ -130,5 +130,8 @@
       "first-time-contributor"
     ]
   },
-  "packageManager": "pnpm@9.12.3+sha256.24235772cc4ac82a62627cd47f834c72667a2ce87799a846ec4e8e555e2d4b8b"
+  "packageManager": "pnpm@9.12.3+sha256.24235772cc4ac82a62627cd47f834c72667a2ce87799a846ec4e8e555e2d4b8b",
+  "dependencies": {
+    "@storybook/test": "^8.4.1"
+  }
 }

@@ -73,3 +73,12 @@ This addon uses the [Storybook Channel API](https://storybook.js.org/docs/addons
 ## License
 
 Copyright (c) 2023 Benjamin Kindle (@literalpie). This is free software, and may be redistributed under the terms specified in the LICENSE file.
+
+# Choices
+
+- Make a breaking change, all in on globals. Already go to 2.0 dropping paramters support
+- Ship in state where initialGlobals does not work on non-docs stories. Docs will get direction from whatever happened to be the last story you were on :-/
+- Use globals as a fallback value. The globals value gets updated when any change happens (eg. story has parameters), which will cause all later viewed stories to use that globals value.
+- Opt in to globals. I'd have to figure out how to refactor to support both ways. - I'd rather just say stay on 1.0 if you want to keep the old way.
+
+I think I want to do the 2.0 way.

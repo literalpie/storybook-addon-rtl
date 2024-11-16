@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@storybook/test':
+        specifier: ^8.4.1
+        version: 8.4.1(storybook@8.4.1(prettier@3.3.3))
     devDependencies:
       '@auto-it/conventional-commits':
         specifier: ^11.3.0

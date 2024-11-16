@@ -1,30 +1,36 @@
-import React, { useState } from "react";
-import { useChannel } from "@storybook/manager-api";
-import { RTLDirection, UPDATE_EVENT_ID } from "src/constants";
+import React from "react";
+import {
+  useChannel,
+  useGlobals,
+  useStorybookApi,
+} from "@storybook/manager-api";
+import { UPDATE_EVENT_ID } from "src/constants";
 import { IconButton } from "@storybook/components";
 import { DirectionArrowsIcon } from "./DirectionArrowsIcon";
 
 export const Tool = () => {
-  const [dirState, setDirState] = useState<{ direction: RTLDirection }>({
-    direction: "ltr",
-  });
-  const channel = useChannel({
-    [UPDATE_EVENT_ID]: (updateEvent) => {
-      setDirState({ direction: updateEvent.direction });
-    },
-  });
+  const channel = useChannel({});
+  const [globals] = useGlobals();
+  const storyGlobals = useStorybookApi().getStoryGlobals();
+  console.log("story", storyGlobals);
   return (
     <>
+      blah
       <IconButton
-        placeholder={"Text Direction"}
+        disabled={storyGlobals.addonRtl !== undefined}
+        aria-label="Text Direction"
         onClick={() => {
+          const newDirection = globals.addonRtl === "rtl" ? "ltr" : "rtl";
+          // The value needs to be set with the event like this so we can include userInteraction: true
+          // so it will take higher priority that story change events.
+          // The listener added in manager.ts will make sure the value makes its way to "globals"
           channel(UPDATE_EVENT_ID, {
-            direction: dirState.direction === "rtl" ? "ltr" : "rtl",
+            direction: newDirection,
             userInteraction: true,
           });
         }}
       >
-        <DirectionArrowsIcon direction={dirState.direction} />
+        <DirectionArrowsIcon direction={globals.addonRtl} />
       </IconButton>
     </>
   );

@@ -11,27 +11,35 @@
 import type {
   Renderer,
   ProjectAnnotations,
-  PartialStoryFn,
+  DecoratorFunction,
 } from "@storybook/types";
-import { setTextDirection } from "./utils";
-import { INITIALIZE_EVENT_ID, UPDATE_EVENT_ID } from "./constants";
+import { INITIALIZE_EVENT_ID } from "./constants";
 import { useChannel, useEffect } from "@storybook/preview-api";
+import { useGlobals } from "@storybook/preview-api";
 
-const withRtl = (StoryFn: PartialStoryFn<Renderer>) => {
-  const channel = useChannel({
-    [UPDATE_EVENT_ID]: ({ direction }) => {
-      setTextDirection(direction);
-    },
-  });
+const withRtl: DecoratorFunction = (StoryFn, context) => {
+  const [globals] = useGlobals();
+
+  (context.canvasElement as HTMLElement).dir = globals.addonRtl;
+
+  const channel = useChannel({});
 
   useEffect(() => {
-    channel(INITIALIZE_EVENT_ID);
+    // When in docs mode, useEffect seems to be caled on every change of globals.
+    // We don't want to emit this event (and reset things to default values).
+    // When in docs mode, we can rely fully on the globals API, and not support parameters.
+    if (context.viewMode !== "docs") {
+      channel(INITIALIZE_EVENT_ID);
+    }
   }, [channel]);
 
   return StoryFn();
 };
 
 const preview: ProjectAnnotations<Renderer> = {
+  initialGlobals: {
+    addonRtl: "ltr",
+  },
   decorators: [withRtl],
 };
 

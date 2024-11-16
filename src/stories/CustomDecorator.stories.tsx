@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import { useChannel } from "@storybook/preview-api";
+import React from "react";
+import { useChannel, useState } from "@storybook/preview-api";
 import { RTL_UPDATE_EVENT, RTLChangeEvent } from "../index";
 import { Decorator, Meta } from "@storybook/react";
+import { within, userEvent, expect } from "@storybook/test";
+import { getElementDirection } from "./utils";
 
 const SimpleText = () => {
   return <div>This is some example text</div>;
@@ -38,4 +40,19 @@ export const CustomDecorator = {};
 export default {
   decorators: [withDirectionToggle],
   component: SimpleText,
+} satisfies Meta;
+
+export const TestToggle = {
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    expect(getElementDirection(canvasElement)).toBe("ltr");
+    canvas.findByText("The direction is ltr");
+
+    const button = await canvas.findByText("Toggle Direction");
+
+    await userEvent.click(button);
+    await canvas.findByText("The direction is rtl");
+    expect(getElementDirection(canvasElement)).toBe("rtl");
+  },
 } satisfies Meta;
