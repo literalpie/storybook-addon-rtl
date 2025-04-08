@@ -1,7 +1,7 @@
-import { API, addons, types } from "@storybook/manager-api";
+import { API, addons, types } from "storybook/manager-api";
 import { ADDON_ID, RTLDirection, TOOL_ID, UPDATE_EVENT_ID } from "./constants";
 import { getDefaultTextDirection } from "./utils";
-import { STORY_RENDERED } from "@storybook/core-events";
+import { STORY_RENDERED } from "storybook/internal/core-events";
 import { Tool } from "./components/Tool";
 
 addons.register(ADDON_ID, (api) => {

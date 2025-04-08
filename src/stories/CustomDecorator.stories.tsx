@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useChannel } from "@storybook/preview-api";
+import { useChannel } from "storybook/preview-api";
 import { RTL_UPDATE_EVENT, RTLChangeEvent } from "../index";
 import { Decorator, Meta } from "@storybook/react";
 
