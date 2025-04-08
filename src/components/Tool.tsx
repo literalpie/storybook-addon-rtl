@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useChannel } from "@storybook/manager-api";
+import { useChannel } from "storybook/manager-api";
 import { RTLDirection, UPDATE_EVENT_ID } from "src/constants";
-import { IconButton } from "@storybook/components";
+import { IconButton } from "storybook/internal/components";
 import { DirectionArrowsIcon } from "./DirectionArrowsIcon";
 
 export const Tool = () => {
@@ -16,7 +16,6 @@ export const Tool = () => {
   return (
     <>
       <IconButton
-        placeholder={"Text Direction"}
         onClick={() => {
           channel(UPDATE_EVENT_ID, {
             direction: dirState.direction === "rtl" ? "ltr" : "rtl",

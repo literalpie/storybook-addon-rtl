@@ -12,10 +12,10 @@ import type {
   Renderer,
   ProjectAnnotations,
   PartialStoryFn,
-} from "@storybook/types";
+} from "storybook/internal/types";
 import { setTextDirection } from "./utils";
 import { INITIALIZE_EVENT_ID, UPDATE_EVENT_ID } from "./constants";
-import { useChannel, useEffect } from "@storybook/preview-api";
+import { useChannel, useEffect } from "storybook/preview-api";
 
 const withRtl = (StoryFn: PartialStoryFn<Renderer>) => {
   const channel = useChannel({

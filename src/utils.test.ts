@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { API } from "@storybook/manager-api";
+import { API } from "storybook/manager-api";
 import { getDefaultTextDirection, setTextDirection } from "./utils";
 import { describe, test, expect, vi } from "vitest";
 

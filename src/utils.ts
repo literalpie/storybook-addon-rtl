@@ -1,4 +1,4 @@
-import { API } from "@storybook/manager-api";
+import { API } from "storybook/manager-api";
 import { RTLDirection } from "./constants";
 
 export function getDefaultTextDirection(api: API) {
