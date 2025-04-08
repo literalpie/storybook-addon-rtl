@@ -27,7 +27,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20.x
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --ignore-scripts
@@ -38,7 +38,7 @@ jobs:
 
       - name: upload
         uses: actions/upload-pages-artifact@v2
-        with: 
+        with:
           path: storybook-static
 
       - id: deploy
