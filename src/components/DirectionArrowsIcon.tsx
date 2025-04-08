@@ -1,4 +1,4 @@
-import { useTheme } from "@storybook/theming";
+import { useTheme } from "storybook/theming";
 import React from "react";
 import { RTLDirection } from "src/constants";
 
