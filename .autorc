@@ -1,0 +1,9 @@
+{
+  "prereleaseBranches": ["next"],
+  "plugins": [
+    "npm",
+    "git",
+    "conventional-commits",
+    "first-time-contributor"
+  ]
+}
