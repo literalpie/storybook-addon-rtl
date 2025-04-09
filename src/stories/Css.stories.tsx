@@ -1,4 +1,4 @@
-import { Meta } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Css } from "./Css";
 export default {
   component: Css,
@@ -6,5 +6,8 @@ export default {
 
 export const standard = {};
 export const RTL = {
-  parameters: { direction: "rtl" },
-};
+  // Note: Usually, globals should not be set at the story level.
+  globals: {
+    addonRtl: "rtl",
+  },
+} satisfies StoryObj;

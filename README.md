@@ -41,9 +41,10 @@ export const default = {};
 
 export const rtlParameter = {
   // Optionally include direction as story parameter
-  parameters: {
-    direction: 'rtl'
-  }
+  // Note: usually, globals should not be set at the story level because this disables the toolbar toggle button.
+  globals: {
+    addonRtl: 'rtl'
+  },
 }
 ```
 
@@ -53,13 +54,13 @@ export const rtlParameter = {
 
 You can set the direction using query params in the URL. This is useful for things like e2e tests.
 
-Just add `&direction=rtl` or `&direction=ltr` to the end of the URL:
+Just add `&globals=addonRtl:rtl` or `&globals=addonRtl:ltr` to the end of the URL:
 
-`storybook.example.com/?path=/story/button--standard&direction=rtl`
+`storybook.example.com/?path=/story/button--standard&globals=addonRtl:rtl`
 
-### Channel API
+### Globals API
 
-This addon uses the [Storybook Channel API](https://storybook.js.org/docs/addons/addons-api#usechannel) to emit and respond to direction change events. This allows anyone to write custom code that can set or react to changes in the direction. This is especially useful when working with some libraries that need to know about the current direction. See [./src/stories/CustomDecorator.stories.tsx](./src/stories/CustomDecorator.stories.tsx) for an example.
+This addon uses the [Storybook Globals API](https://storybook.js.org/docs/essentials/toolbars-and-globals) to set the direction. This allows anyone to write custom code that can set or react to changes in the direction. This is especially useful when working with some libraries that need to know about the current direction. See [./src/stories/CustomDecorator.stories.tsx](./src/stories/CustomDecorator.stories.tsx) for an example.
 
 ## Meta
 
@@ -72,4 +73,4 @@ This addon uses the [Storybook Channel API](https://storybook.js.org/docs/addons
 
 ## License
 
-Copyright (c) 2023 Benjamin Kindle (@literalpie). This is free software, and may be redistributed under the terms specified in the LICENSE file.
+Copyright (c) 2025 Benjamin Kindle (@literalpie). This is free software, and may be redistributed under the terms specified in the LICENSE file.
