@@ -16,7 +16,8 @@ export const Tool = () => {
   return (
     <>
       <IconButton
-        placeholder={"Text Direction"}
+        title="Text Direction"
+        placeholder="Text Direction"
         onClick={() => {
           channel(UPDATE_EVENT_ID, {
             direction: dirState.direction === "rtl" ? "ltr" : "rtl",
