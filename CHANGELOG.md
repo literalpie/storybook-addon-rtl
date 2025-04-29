@@ -1,3 +1,26 @@
+# v1.1.0 (Tue Apr 29 2025)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Anthanh ([@anthanh](https://github.com/anthanh)), for all your work!
+
+#### 🚀 Enhancement
+
+- feat: button title added [#34](https://github.com/literalpie/storybook-addon-rtl/pull/34) ([@anthanh](https://github.com/anthanh))
+
+#### 🐛 Bug Fix
+
+- update dependencies [#26](https://github.com/literalpie/storybook-addon-rtl/pull/26) ([@literalpie](https://github.com/literalpie))
+- chore: update deps [#22](https://github.com/literalpie/storybook-addon-rtl/pull/22) ([@literalpie](https://github.com/literalpie))
+- Deploy storybook [#21](https://github.com/literalpie/storybook-addon-rtl/pull/21) ([@literalpie](https://github.com/literalpie))
+
+#### Authors: 2
+
+- Anthanh ([@anthanh](https://github.com/anthanh))
+- Benjamin Kindle ([@literalpie](https://github.com/literalpie))
+
+---
+
 # v1.0.1 (Sat Aug 03 2024)
 
 #### 🐛 Bug Fix
