@@ -14,13 +14,8 @@ export const DirectionArrowsIcon = ({
   direction: RTLDirection;
 }) => {
   const theme = useTheme();
-  const ariaLabel =
-    direction === "ltr"
-      ? "Switch direction to right-to-left."
-      : "Switch Direction to left-to-right";
   return (
     <div
-      aria-label={ariaLabel}
       style={{
         width: "20px",
         height: "20px",

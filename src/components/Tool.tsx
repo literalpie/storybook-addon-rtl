@@ -6,8 +6,15 @@ import { DirectionArrowsIcon } from "./DirectionArrowsIcon";
 export const Tool = () => {
   const [globals, setGlobals] = useGlobals();
   const storyGlobals = useStorybookApi().getStoryGlobals();
+
+  const ariaLabel =
+    globals.addonRtl === "ltr"
+      ? "Switch direction to right-to-left."
+      : "Switch direction to left-to-right";
+
   return (
     <IconButton
+      aria-label={ariaLabel}
       // If the current story has the global set, it can not be toggled in the UI
       disabled={storyGlobals.addonRtl !== undefined}
       onClick={() => {
