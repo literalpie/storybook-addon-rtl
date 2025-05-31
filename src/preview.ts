@@ -11,27 +11,22 @@
 import type {
   Renderer,
   ProjectAnnotations,
-  PartialStoryFn,
-} from "@storybook/types";
-import { setTextDirection } from "./utils";
-import { INITIALIZE_EVENT_ID, UPDATE_EVENT_ID } from "./constants";
-import { useChannel, useEffect } from "@storybook/preview-api";
+  DecoratorFunction,
+} from "storybook/internal/types";
+import { useGlobals } from "storybook/preview-api";
 
-const withRtl = (StoryFn: PartialStoryFn<Renderer>) => {
-  const channel = useChannel({
-    [UPDATE_EVENT_ID]: ({ direction }) => {
-      setTextDirection(direction);
-    },
-  });
+const withRtl: DecoratorFunction = (StoryFn, context) => {
+  const [globals] = useGlobals();
 
-  useEffect(() => {
-    channel(INITIALIZE_EVENT_ID);
-  }, [channel]);
+  (context.canvasElement as HTMLElement).dir = globals.addonRtl;
 
   return StoryFn();
 };
 
 const preview: ProjectAnnotations<Renderer> = {
+  initialGlobals: {
+    addonRtl: "ltr",
+  },
   decorators: [withRtl],
 };
 

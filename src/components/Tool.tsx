@@ -1,32 +1,27 @@
-import React, { useState } from "react";
-import { useChannel } from "@storybook/manager-api";
-import { RTLDirection, UPDATE_EVENT_ID } from "src/constants";
-import { IconButton } from "@storybook/components";
+import React from "react";
+import { useGlobals, useStorybookApi } from "storybook/manager-api";
+import { IconButton } from "storybook/internal/components";
 import { DirectionArrowsIcon } from "./DirectionArrowsIcon";
 
 export const Tool = () => {
-  const [dirState, setDirState] = useState<{ direction: RTLDirection }>({
-    direction: "ltr",
-  });
-  const channel = useChannel({
-    [UPDATE_EVENT_ID]: (updateEvent) => {
-      setDirState({ direction: updateEvent.direction });
-    },
-  });
+  const [globals, setGlobals] = useGlobals();
+  const storyGlobals = useStorybookApi().getStoryGlobals();
+  const title =
+    globals.addonRtl === "ltr"
+      ? "Switch direction to right-to-left."
+      : "Switch direction to left-to-right";
+
   return (
-    <>
-      <IconButton
-        title="Text Direction"
-        placeholder="Text Direction"
-        onClick={() => {
-          channel(UPDATE_EVENT_ID, {
-            direction: dirState.direction === "rtl" ? "ltr" : "rtl",
-            userInteraction: true,
-          });
-        }}
-      >
-        <DirectionArrowsIcon direction={dirState.direction} />
-      </IconButton>
-    </>
+    <IconButton
+      title={title}
+      // If the current story has the global set, it can not be toggled in the UI
+      disabled={storyGlobals.addonRtl !== undefined}
+      onClick={() => {
+        const newDirection = globals.addonRtl === "rtl" ? "ltr" : "rtl";
+        setGlobals({ addonRtl: newDirection });
+      }}
+    >
+      <DirectionArrowsIcon direction={globals.addonRtl} />
+    </IconButton>
   );
 };
