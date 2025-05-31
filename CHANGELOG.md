@@ -1,3 +1,15 @@
+# v2.0.0 (Sat May 31 2025)
+
+#### 💥 Breaking Change
+
+- 2.0.0 [#35](https://github.com/literalpie/storybook-addon-rtl/pull/35) ([@literalpie](https://github.com/literalpie))
+
+#### Authors: 1
+
+- Benjamin Kindle ([@literalpie](https://github.com/literalpie))
+
+---
+
 # v1.1.0 (Tue Apr 29 2025)
 
 :tada: This release contains work from a new contributor! :tada:
