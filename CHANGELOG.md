@@ -1,3 +1,20 @@
+# v2.0.1 (Mon Oct 27 2025)
+
+#### 🐛 Bug Fix
+
+- docs: link to demo [#38](https://github.com/literalpie/storybook-addon-rtl/pull/38) ([@literalpie](https://github.com/literalpie))
+- chore: update actions [#37](https://github.com/literalpie/storybook-addon-rtl/pull/37) ([@literalpie](https://github.com/literalpie))
+
+#### ⚠️ Pushed to `master`
+
+- allow release on workflow ([@literalpie](https://github.com/literalpie))
+
+#### Authors: 1
+
+- Benjamin Kindle ([@literalpie](https://github.com/literalpie))
+
+---
+
 # v2.0.0 (Sat May 31 2025)
 
 #### 💥 Breaking Change
