@@ -76,4 +76,4 @@ This addon uses the [Storybook Globals API](https://storybook.js.org/docs/essent
 ## License
 
 Copyright (c) 2025 Benjamin Kindle (@literalpie). This is free software, and may be redistributed under the terms specified in the LICENSE file.
-<!-- test !-->
+<!-- test !!-->
