@@ -13,6 +13,7 @@ export const Tool = () => {
 
   return (
     <IconButton
+      aria-label={title}
       title={title}
       // If the current story has the global set, it can not be toggled in the UI
       disabled={storyGlobals.addonRtl !== undefined}
