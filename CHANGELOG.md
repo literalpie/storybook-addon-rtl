@@ -1,3 +1,15 @@
+# v3.0.1 (Mon Nov 03 2025)
+
+#### 🐛 Bug Fix
+
+- chore: update dependencies [#45](https://github.com/literalpie/storybook-addon-rtl/pull/45) ([@literalpie](https://github.com/literalpie))
+
+#### Authors: 1
+
+- Benjamin Kindle ([@literalpie](https://github.com/literalpie))
+
+---
+
 # v3.0.0 (Mon Nov 03 2025)
 
 :tada: This release contains work from a new contributor! :tada:
