@@ -1,3 +1,20 @@
+# v3.0.0 (Mon Nov 03 2025)
+
+:tada: This release contains work from a new contributor! :tada:
+
+Thank you, Steve Dodier-Lazaro ([@Sidnioulz](https://github.com/Sidnioulz)), for all your work!
+
+#### 💥 Breaking Change
+
+- feat: Support Storybook 10 [#42](https://github.com/literalpie/storybook-addon-rtl/pull/42) ([@Sidnioulz](https://github.com/Sidnioulz) [@literalpie](https://github.com/literalpie))
+
+#### Authors: 2
+
+- Benjamin Kindle ([@literalpie](https://github.com/literalpie))
+- Steve Dodier-Lazaro ([@Sidnioulz](https://github.com/Sidnioulz))
+
+---
+
 # v2.0.1 (Mon Oct 27 2025)
 
 #### 🐛 Bug Fix
