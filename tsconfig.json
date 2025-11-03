@@ -7,12 +7,13 @@
     "incremental": false,
     "isolatedModules": true,
     "jsx": "react",
-    "lib": ["es2020", "dom"],
-    "module": "commonjs",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "module": "preserve",
     "noImplicitAny": true,
-    "rootDir": "./src",
+    "resolveJsonModule": true,
+    "rootDir": ".",
     "skipLibCheck": true,
-    "target": "ES2020"
+    "target": "esnext"
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "tsup.config.ts"]
 }
