@@ -2,7 +2,7 @@
   "name": "storybook-addon-rtl",
   "description": "Right-to-left addon for Storybook.",
   "author": "literalpie <benjaminkindle@yahoo.com>",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "license": "MIT",
   "type": "module",
   "repository": {
