@@ -8,11 +8,7 @@ import { RTLDirection } from "src/constants";
  * An icon with two arrows pointing in different directions.
  * Depending on the direction parameter, one of the arrows will be emphasized with color and scale.
  */
-export const DirectionArrowsIcon = ({
-  direction,
-}: {
-  direction: RTLDirection;
-}) => {
+export const DirectionArrowsIcon = ({ direction }: { direction: RTLDirection }) => {
   const theme = useTheme();
   const ariaLabel =
     direction === "ltr"
@@ -36,8 +32,7 @@ export const DirectionArrowsIcon = ({
           backgroundColor: "transparent",
           width: "100%",
           transition: "transform 0.3s",
-          transform:
-            direction === "rtl" ? "scale(0.5) translate(0, -35%)" : "scale(1)",
+          transform: direction === "rtl" ? "scale(0.5) translate(0, -35%)" : "scale(1)",
         }}
       >
         <svg
@@ -46,8 +41,7 @@ export const DirectionArrowsIcon = ({
           style={{
             transition: "fill 0.3s",
 
-            fill:
-              direction === "ltr" ? theme.barSelectedColor : theme.barTextColor,
+            fill: direction === "ltr" ? theme.barSelectedColor : theme.barTextColor,
             height: "100%",
             width: "80%",
           }}
@@ -64,9 +58,7 @@ export const DirectionArrowsIcon = ({
           scale: direction === "rtl" ? 1 : 0.5,
           transition: "transform 0.3s",
           transform:
-            direction === "ltr"
-              ? "scale(0.5) translate(0, -1px)"
-              : "scale(1) translate(0, -20%)",
+            direction === "ltr" ? "scale(0.5) translate(0, -1px)" : "scale(1) translate(0, -20%)",
         }}
       >
         <svg
@@ -75,8 +67,7 @@ export const DirectionArrowsIcon = ({
           style={{
             transition: "fill 0.3s",
 
-            fill:
-              direction === "rtl" ? theme.barSelectedColor : theme.barTextColor,
+            fill: direction === "rtl" ? theme.barSelectedColor : theme.barTextColor,
             transform: "rotate(180deg)",
             height: "100%",
             width: "80%",
