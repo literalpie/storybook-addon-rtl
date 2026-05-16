@@ -8,11 +8,7 @@
  *
  * https://storybook.js.org/docs/react/writing-stories/decorators
  */
-import type {
-  Renderer,
-  ProjectAnnotations,
-  DecoratorFunction,
-} from "storybook/internal/types";
+import type { Renderer, ProjectAnnotations, DecoratorFunction } from "storybook/internal/types";
 import { useGlobals } from "storybook/preview-api";
 
 const withRtl: DecoratorFunction = (StoryFn, context) => {
