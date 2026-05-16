@@ -27,8 +27,7 @@ export const Css = () => {
           border: "1px solid black",
         }}
       >
-        This element has start margin{" "}
-        <code>{`{ marginInlineStart: "20px" }`}</code>
+        This element has start margin <code>{`{ marginInlineStart: "20px" }`}</code>
       </p>
       <div className="margin-start" style={{ border: "1px solid black" }}>
         <p>This element has margin set based on the Dir value</p>

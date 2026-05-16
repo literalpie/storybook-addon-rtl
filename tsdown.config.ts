@@ -10,11 +10,8 @@ export default defineConfig(async () => {
   //     "previewEntries": ["./src/preview.ts"]
   //   }
   // }
-  const packageJson = (
-    await import("./package.json", { with: { type: "json" } })
-  ).default;
-  const { bundler: { managerEntries = [], previewEntries = [] } = {} } =
-    packageJson;
+  const packageJson = (await import("./package.json", { with: { type: "json" } })).default;
+  const { bundler: { managerEntries = [], previewEntries = [] } = {} } = packageJson;
 
   const commonConfig: UserConfig = {
     format: ["esm"],
