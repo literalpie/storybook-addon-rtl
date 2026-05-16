@@ -1,3 +1,16 @@
+# v3.0.2 (Sat May 16 2026)
+
+#### 🐛 Bug Fix
+
+- fix: make global type optional [#49](https://github.com/literalpie/storybook-addon-rtl/pull/49) ([@literalpie](https://github.com/literalpie))
+- chore: update dependencies [#48](https://github.com/literalpie/storybook-addon-rtl/pull/48) ([@literalpie](https://github.com/literalpie))
+
+#### Authors: 1
+
+- Benjamin Kindle ([@literalpie](https://github.com/literalpie))
+
+---
+
 # v3.0.1 (Mon Nov 03 2025)
 
 #### 🐛 Bug Fix
