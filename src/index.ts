@@ -7,9 +7,6 @@ export { type RTLDirection } from "./constants";
 export default () =>
   definePreviewAddon<{
     globals: {
-      addonRtl: RTLDirection;
-    };
-    initialGlobals: {
-      addonRtl: RTLDirection;
+      addonRtl?: RTLDirection;
     };
   }>(addonAnnotations);
