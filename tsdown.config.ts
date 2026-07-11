@@ -7,13 +7,11 @@ export default defineConfig(async () => {
   //   "bundler": {
   //     "exportEntries": ["./src/index.ts"],
   //     "managerEntries": ["./src/manager.ts"],
-  //     "presetEntries": ["./src/preset.ts"],
   //     "previewEntries": ["./src/preview.ts"]
   //   }
   // }
   const packageJson = (await import("./package.json", { with: { type: "json" } })).default;
-  const { bundler: { managerEntries = [], presetEntries = [], previewEntries = [] } = {} } =
-    packageJson;
+  const { bundler: { managerEntries = [], previewEntries = [] } = {} } = packageJson;
 
   const commonConfig: UserConfig = {
     format: ["esm"],
@@ -39,16 +37,6 @@ export default defineConfig(async () => {
       entry: managerEntries,
       platform: "browser",
       target: "esnext",
-    });
-  }
-
-  // preset entries are loaded by Storybook in Node while it prepares the addon.
-  if (presetEntries.length) {
-    configs.push({
-      ...commonConfig,
-      entry: presetEntries,
-      platform: "node",
-      target: "node20",
     });
   }
 

@@ -35,10 +35,6 @@
       "types": "./dist/preview.d.ts",
       "default": "./dist/preview.js"
     },
-    "./preset": {
-      "types": "./dist/preset.d.mts",
-      "default": "./dist/preset.mjs"
-    },
     "./manager": "./dist/manager.js",
     "./package.json": "./package.json"
   },
@@ -95,9 +91,6 @@
   "bundler": {
     "managerEntries": [
       "src/manager.ts"
-    ],
-    "presetEntries": [
-      "src/preset.ts"
     ],
     "previewEntries": [
       "src/preview.ts",
