@@ -1,5 +1,6 @@
+import preview from "#.storybook/preview";
 import React from "react";
-import { Decorator, Meta } from "@storybook/react";
+import { Decorator } from "@storybook/react-vite";
 import { expect, userEvent, within } from "storybook/test";
 import { getElementDirection } from "./utils";
 import { useGlobals } from "storybook/preview-api";
@@ -30,13 +31,14 @@ const withDirectionToggle: Decorator = (Story) => {
   );
 };
 
-export const CustomDecorator = {};
-export default {
+const meta = preview.meta({
   decorators: [withDirectionToggle],
   component: SimpleText,
-} satisfies Meta;
+});
 
-export const TestToggle = {
+export const CustomDecorator = meta.story({});
+
+export const TestToggle = meta.story({
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const startDirection = getElementDirection(canvasElement);
@@ -49,4 +51,4 @@ export const TestToggle = {
     await canvas.findByText(`The direction is ${newDirection}`);
     expect(getElementDirection(canvasElement)).toBe(newDirection);
   },
-} satisfies Meta;
+});

@@ -1,6 +1,9 @@
-import type { Preview } from "@storybook/react";
+import { definePreview } from "@storybook/react-vite";
+import addonDocs from "@storybook/addon-docs";
+import addonRtl from "../dist/index";
 
-const preview: Preview = {
+export default definePreview({
+  addons: [addonDocs(), addonRtl()],
   parameters: {
     backgrounds: {
       default: "light",
@@ -12,6 +15,4 @@ const preview: Preview = {
       },
     },
   },
-};
-
-export default preview;
+});

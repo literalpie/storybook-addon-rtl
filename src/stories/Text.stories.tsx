@@ -1,14 +1,14 @@
-import { Meta } from "@storybook/react";
+import preview from "#.storybook/preview";
 import { Text } from "./Text";
-export default {
+const meta = preview.meta({
   component: Text,
-} satisfies Meta;
+});
 
-export const standard = {};
+export const standard = meta.story({});
 
-export const RTL = {
+export const RTL = meta.story({
   // Note: Usually, globals should not be set at the story level.
   globals: {
     addonRtl: "rtl",
   },
-};
+});

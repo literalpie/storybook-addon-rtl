@@ -18,36 +18,49 @@ npm i --save-dev storybook-addon-rtl
 
 Add the addon to the addons array in `.storybook/main.js`
 
-```js
-module.exports = {
+```ts
+import { defineMain } from "@storybook/react-vite/node";
+
+export default defineMain({
   /// other storybook configuration
   addons: [
     // other addons here
     "storybook-addon-rtl",
   ],
-};
+});
+```
+
+If you are using CSF 4, add the addon to your preview definition:
+```ts
+import { definePreview } from "@storybook/react-vite"; // Replace import with the framework you use
+import addonRtl from "storybook-addon-rtl";
+
+export default definePreview({
+  addons: [addonRtl()],
+});
 ```
 
 Then write your stories normally:
 
 ```js
-import React from 'react'
-import MyComponent from './MyComponent'
+import MyComponent from './MyComponent';
+import preview from '#.storybook/preview';
 
-export default {
+const meta = preview.meta({
   title: 'My Component',
   component: MyComponent
-};
+});
+export default meta;
 
-export const default = {};
+export const default = meta.story({});
 
-export const rtlParameter = {
+export const rtlParameter = meta.story({
   // Optionally include direction as story parameter
   // Note: usually, globals should not be set at the story level because this disables the toolbar toggle button.
   globals: {
     addonRtl: 'rtl'
   },
-}
+})
 ```
 
 ## Advanced
@@ -75,4 +88,4 @@ This addon uses the [Storybook Globals API](https://storybook.js.org/docs/essent
 
 ## License
 
-Copyright (c) 2025 Benjamin Kindle (@literalpie). This is free software, and may be redistributed under the terms specified in the LICENSE file.
+Copyright (c) 2026 Benjamin Kindle (@literalpie). This is free software, and may be redistributed under the terms specified in the LICENSE file.

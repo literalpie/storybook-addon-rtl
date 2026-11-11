@@ -1,6 +1,6 @@
 import React from "react";
 import { useGlobals, useStorybookApi } from "storybook/manager-api";
-import { IconButton } from "storybook/internal/components";
+import { Button } from "storybook/internal/components";
 import { DirectionArrowsIcon } from "./DirectionArrowsIcon";
 
 export const Tool = () => {
@@ -12,8 +12,9 @@ export const Tool = () => {
       : "Switch direction to left-to-right";
 
   return (
-    <IconButton
-      aria-label={title}
+    <Button
+      ariaLabel={title}
+      padding="small"
       title={title}
       variant="ghost"
       // If the current story has the global set, it can not be toggled in the UI
@@ -23,7 +24,7 @@ export const Tool = () => {
         setGlobals({ addonRtl: newDirection });
       }}
     >
-      <DirectionArrowsIcon direction={globals.addonRtl} />
-    </IconButton>
+      <DirectionArrowsIcon direction={globals.addonRtl ?? "ltr"} />
+    </Button>
   );
 };
