@@ -3,7 +3,7 @@ name: Release
 on: [push, workflow_dispatch]
 
 permissions:
-  contents: read
+  contents: write
   id-token: write
 
 
