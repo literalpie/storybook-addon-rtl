@@ -1,6 +1,6 @@
-import { useTheme } from "storybook/theming";
+import { useTheme } from "storybook/theming/emotion";
 import React from "react";
-import { RTLDirection } from "src/constants";
+import { RTLDirection } from "#src/constants";
 
 // There are a lot of specific translate and scale values in this file that were picked based on trial/error
 // based on what looks the most balanced.

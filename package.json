@@ -26,6 +26,13 @@
     "*.d.ts"
   ],
   "type": "module",
+  "imports": {
+    "#*": [
+      "./*",
+      "./*.ts",
+      "./*.tsx"
+    ]
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -48,7 +55,7 @@
     "build:watch": "pnpm run build --watch",
     "start": "run-p build:watch storybook",
     "release": "pnpm run build && auto shipit",
-    "storybook": "storybook dev -p 6006 --no-open",
+    "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "format": "oxfmt --check .",
     "format:write": "oxfmt .",
@@ -58,9 +65,8 @@
   "devDependencies": {
     "@auto-it/conventional-commits": "^11.3.6",
     "@auto-it/first-time-contributor": "^11.3.6",
-    "@storybook/addon-docs": "^10.6.7",
-    "@storybook/icons": "^2.2.0",
-    "@storybook/react-vite": "^10.6.7",
+    "@storybook/addon-docs": "^11.0.0-beta.1",
+    "@storybook/react-vite": "^11.0.0-beta.1",
     "@types/node": "^26.6.6",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
@@ -72,18 +78,24 @@
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
     "rimraf": "^6.1.4",
-    "storybook": "^10.6.7",
+    "storybook": "^11.0.0-beta.1",
     "tsdown": "^0.23.7",
-    "typescript": "~7.0.2",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "vite": "^8.3.7"
   },
   "peerDependencies": {
-    "storybook": "^10.0.0"
+    "storybook": "^11.0.0-beta.1"
   },
   "packageManager": "pnpm@12.18.0",
   "auto": {
     "plugins": [
-      ["npm", { "setRcToken": false }],
+      [
+        "npm",
+        {
+          "setRcToken": false
+        }
+      ],
       "conventional-commits",
       "first-time-contributor"
     ]
