@@ -16,9 +16,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Prepare repository
-        run: git fetch --unshallow --tags
-
       - name: Use Node.js 26.x
         uses: actions/setup-node@v4
         with:
