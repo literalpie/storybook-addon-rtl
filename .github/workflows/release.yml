@@ -29,5 +29,6 @@ jobs:
       - name: Create Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_LOGLEVEL: verbose
         run: |
           npm run release
