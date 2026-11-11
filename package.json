@@ -83,7 +83,7 @@
   "packageManager": "pnpm@12.18.0",
   "auto": {
     "plugins": [
-      "npm",
+      ["npm", { "setRcToken": false }],
       "conventional-commits",
       "first-time-contributor"
     ]
