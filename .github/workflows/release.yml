@@ -12,10 +12,10 @@ jobs:
       - name: Prepare repository
         run: git fetch --unshallow --tags
 
-      - name: Use Node.js 24.x
+      - name: Use Node.js 26.x
         uses: actions/setup-node@v3
         with:
-          node-version: 24.x
+          node-version: 26.x
 
       - uses: pnpm/action-setup@v4
 
