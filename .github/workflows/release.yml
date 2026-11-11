@@ -4,6 +4,8 @@ on: [push, workflow_dispatch]
 
 permissions:
   contents: write
+  issues: write
+  pull-requests: write
   id-token: write
 
 
